@@ -44,7 +44,7 @@ export default {
           title: "Metrofit",
           description:
             "A website for helping people find a city to relocate to. Allows filtering based on temperature, precipitation, population, cost of living and unemployment",
-          url: "https://metrofit.io"
+          url: "https://metrofit.netlify.com"
         },
         {
           images: ["808designstudio.png"],
