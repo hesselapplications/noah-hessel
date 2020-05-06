@@ -77,13 +77,21 @@ export default {
           ]
         },
         {
-          dates: "May 2019 — Present",
+          dates: "May 2019 — May 2020",
           title: "New Application Developer",
           place: "Church Mutual",
           accomplishments: [
             "Technical lead for a system to manage brokers, agents and sales representatives",
             "Suggest, pilot, and eventually introduce vue.js as the new company standard for creating frontend applications",
             "Member of a core group of individuals in charge of implementing CI/CD and other DevOps initiatives"
+          ]
+        },
+        {
+          dates: "May 2020 — Present",
+          title: "Advisory Application Developer",
+          place: "Church Mutual",
+          accomplishments: [
+            "Technical lead for a implementation of Church Mutual's first external facing customer and broker portal"
           ]
         }
       ]
