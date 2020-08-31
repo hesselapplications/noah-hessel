@@ -57,19 +57,19 @@ export default {
         {
           icon: "mdi-android",
           label: "Android",
-          level: 70,
+          level: 50,
           color: "green"
         },
         {
           icon: "mdi-database",
           label: "SQL",
-          level: 50,
+          level: 70,
           color: "blue-grey lighten-2"
         },
         {
           icon: "mdi-git",
           label: "Git",
-          level: 50,
+          level: 70,
           color: "orange darken-2"
         },
         {
