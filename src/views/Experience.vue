@@ -1,31 +1,23 @@
 <template>
   <Section label="Experience" class="orange lighten-2">
-    <v-timeline dense dark align-top>
-      <v-timeline-item
-        v-for="e in experience"
-        :key="e.dates"
-        color="blue-grey darken-2"
-        small
-      >
-        <v-layout row wrap class="my-1">
-          <v-flex xs12 md6>
-            <div class="title white--text font-weight-medium">{{e.title}}</div>
-            <div class="white--text font-weight-light mt-1">
-              {{e.dates}}
-              <br />
-              {{e.place}}
-            </div>
-          </v-flex>
-          <v-flex xs12 md6>
-            <div
-                v-for="(accomplishment, index) in e.accomplishments"
-                :key="index"
-                class="subheading white--text font-italic font-weight-thin mb-3"
-              >— {{accomplishment}}</div>
-          </v-flex>
-        </v-layout>
-      </v-timeline-item>
-    </v-timeline>
+    <v-expansion-panel>
+      <v-expansion-panel-content v-for="e in experience" :key="e.dates">
+        <template v-slot:header>
+          <div>
+            <div class="subheading font-weight-bold">{{e.title}}</div>
+            <span class="body-1 grey--text font-weight-light">{{e.place}}, {{e.dates}}</span>
+          </div>
+        </template>
+        <ul class="mb-3">
+          <li
+            v-for="accomplishment in e.accomplishments"
+            :key="accomplishment"
+            class="body-1 font-weight-thin ml-3"
+            v-html="accomplishment"
+          ></li>
+        </ul>
+      </v-expansion-panel-content>
+    </v-expansion-panel>
   </Section>
 </template>
 
@@ -41,12 +33,11 @@ export default {
       experience: [
         {
           dates: "Sep 2014 — Dec 2017",
-          title: "Bachelor, Computer Science",
+          title: "Bachelor of Science, Computer Science",
           place: "UW Milwaukee",
           accomplishments: [
             "UWM Engineering Excellence Scholarship recipient",
-            "Graduated Magna Cum Laude, 3.654 GPA",
-            "Satya Nadella got his degree here. He seems to be doing ok..."
+            "Graduated Magna Cum Laude, 3.654 GPA"
           ]
         },
         {
@@ -83,7 +74,8 @@ export default {
           accomplishments: [
             "Technical lead for a system to manage brokers, agents and sales representatives",
             "Suggest, pilot, and eventually introduce vue.js as the new company standard for creating frontend applications",
-            "Member of a core group of individuals in charge of implementing CI/CD and other DevOps initiatives"
+            "Wrote multiple libraries to ease development at Church Mutual. Used by nearly all of our spring boot apps.",
+            "Obtained <a href='https://triplebyte.com/tb/noah-hessel-wchqpb1/certificate/track/generalist'> Triplebyte Certification</a>"
           ]
         },
         {
@@ -91,7 +83,7 @@ export default {
           title: "Advisory Application Developer",
           place: "Church Mutual",
           accomplishments: [
-            "Technical lead for a implementation of Church Mutual's first external facing customer and broker portal"
+            "Co-lead team of 5 developers implementing Church Mutual's first external facing insured and producer portal"
           ]
         }
       ]

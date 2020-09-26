@@ -48,13 +48,13 @@ export default {
           url: "https://www.linkedin.com/in/noahhessel",
           color: "blue"
         },
-        {
-          icon: "mdi-file-document",
-          label: "Resume",
-          url:
-            "https://docs.google.com/document/d/1EgYaVc7SsUYpegLAES_rkvtLFKeLo1HedruMgyEYKx8/edit?usp=sharing",
-          color: "teal"
-        }
+        // {
+        //   icon: "mdi-file-document",
+        //   label: "Resume",
+        //   url:
+        //     "https://docs.google.com/document/d/1EgYaVc7SsUYpegLAES_rkvtLFKeLo1HedruMgyEYKx8/edit?usp=sharing",
+        //   color: "teal"
+        // }
       ]
     };
   }
