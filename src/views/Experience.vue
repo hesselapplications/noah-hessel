@@ -75,7 +75,7 @@ export default {
             "Technical lead for a system to manage brokers, agents and sales representatives",
             "Suggest, pilot, and eventually introduce vue.js as the new company standard for creating frontend applications",
             "Wrote multiple libraries to ease development at Church Mutual. Used by nearly all of our spring boot apps.",
-            "Obtained <a href='https://triplebyte.com/tb/noah-hessel-wchqpb1/certificate/track/generalist'> Triplebyte Certification</a>"
+            "Obtained <a href='https://triplebyte.com/tb/noah-hessel-wchqpb1/certificate/track/generalist'> Triplebyte Generalist Certification</a>"
           ]
         },
         {
@@ -83,7 +83,8 @@ export default {
           title: "Advisory Application Developer",
           place: "Church Mutual",
           accomplishments: [
-            "Co-lead team of 5 developers implementing Church Mutual's first external facing insured and producer portal"
+            "Co-lead team of 5 developers implementing Church Mutual's first external facing insured and producer portal",
+            "Obtained <a href='https://triplebyte.com/tb/noah-hessel-wchqpb1/certificate/track/frontend'>Triplebyte Front End Certification</a>"
           ]
         }
       ]
