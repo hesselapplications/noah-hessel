@@ -17,69 +17,12 @@ export default {
   },
   data() {
     return {
-      skills: [
-        {
-          icon: "mdi-language-html5",
-          label: "HTML",
-          level: 80,
-          color: "deep-orange"
-        },
-        {
-          icon: "mdi-language-css3",
-          label: "CSS",
-          level: 60,
-          color: "blue"
-        },
-        {
-          icon: "mdi-language-javascript",
-          label: "Javascript",
-          level: 70,
-          color: "amber"
-        },
-        {
-          icon: "mdi-vuetify",
-          label: "Vuetify",
-          level: 90,
-          color: "blue lighten-2"
-        },
-        {
-          icon: "mdi-vuejs",
-          label: "Vue",
-          level: 90,
-          color: "green lighten-1"
-        },
-        {
-          icon: "mdi-leaf",
-          label: "Spring",
-          level: 90,
-          color: "green darken-2"
-        },
-        {
-          icon: "mdi-android",
-          label: "Android",
-          level: 50,
-          color: "green"
-        },
-        {
-          icon: "mdi-database",
-          label: "SQL",
-          level: 70,
-          color: "blue-grey lighten-2"
-        },
-        {
-          icon: "mdi-git",
-          label: "Git",
-          level: 70,
-          color: "orange darken-2"
-        },
-        {
-          icon: "mdi-language-java",
-          label: "Java",
-          level: 90,
-          color: "red lighten-1"
-        }
-      ]
+      skills: []
     };
+  },
+  async created() {
+    var { data } = await this.$prismic.client.getSingle("skills");
+    this.skills = data.skills;
   }
 };
 </script>

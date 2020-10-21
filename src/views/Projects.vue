@@ -3,7 +3,7 @@
     <v-layout row wrap>
       <v-flex xs12 lg4 v-for="(project, index) in projects" :key="index">
         <Project
-          :images="project.images"
+          :src="project.src"
           :title="project.title"
           :description="project.description"
           :url="project.url"
@@ -24,37 +24,24 @@ export default {
   },
   data() {
     return {
-      projects: [
-        {
-          images: [
-            "snowblower/1.jpg",
-            "snowblower/2.jpg",
-            "snowblower/3.jpg",
-            "snowblower/4.jpg",
-            "snowblower/5.jpg",
-            "snowblower/6.jpg"
-          ],
-          title: "Self Driving Snowblower",
-          description:
-            "Funded by a $10,000 grant from the Lemelson MIT InvenTeams program. Presented to peers and experts on MIT campus",
-          url: "https://lemelson.mit.edu/teams/90"
-        },
-        {
-          images: ["metrofit.png"],
-          title: "Metrofit",
-          description:
-            "A website for helping people find a city to relocate to. Allows filtering based on temperature, precipitation, population, cost of living and unemployment",
-          url: "https://metrofit.netlify.com"
-        },
-        {
-          images: ["808designstudio.png"],
-          title: "808 Design Studio",
-          description: "My father's architectural firm, specializing in residential design services",
-          url: "http://808designstudio.com"
-        }
-      ]
+      projects: []
     };
-  }
+  },
+  async created() {
+    var { results } = await this.$prismic.client.query(
+      this.$prismic.Predicates.at("document.type", "project"),
+      { orderings: "[my.project.first_publication_date]" }
+    );
+
+    this.projects = results.map(result => {
+      return {
+        src: result.data.heading_images.map(heading_image => heading_image.heading_image.url),
+        title: result.data.title[0].text,
+        description: result.data.description[0].text,
+        url: result.data.project_link.url
+      }
+    });
+  },
 };
 </script>
 

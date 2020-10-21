@@ -3,7 +3,7 @@
     <v-card
       slot-scope="{ hover }"
       :class="`elevation-${hover ? 12 : 4}`"
-      @click="goToUrl"
+      @click="goToBlogPost"
       height="100%"
     >
       <!-- IMAGES -->
@@ -31,11 +31,11 @@ export default {
     src: Array,
     title: String,
     description: String,
-    url: String
+    uid: String
   },
   methods: {
-    goToUrl() {
-      window.location.href = this.url;
+    goToBlogPost() {
+      this.$router.push(this.uid);
     }
   }
 };
