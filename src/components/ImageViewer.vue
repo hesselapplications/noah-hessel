@@ -5,7 +5,7 @@
     :aspect-ratio="aspectRatio"
     @click.stop
   >
-    <v-carousel hide-delimiters height="auto">
+    <v-carousel hide-delimiters show-arrows-on-hover height="auto" cycle>
       <v-carousel-item
         v-for="(source, index) in src"
         :aspect-ratio="aspectRatio"
@@ -30,6 +30,6 @@ export default {
       type: Number,
       default: 16 / 9,
     },
-  },
+  }
 };
 </script>

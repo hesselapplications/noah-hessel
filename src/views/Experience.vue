@@ -32,8 +32,7 @@ export default {
     };
   },
   async created() {
-    var { data } = await this.$prismic.client.getSingle("experience");
-    this.experience = data.experience;
+    this.experience = await this.$api.getExperience();
   },
   methods: {
     formatDate(date) {

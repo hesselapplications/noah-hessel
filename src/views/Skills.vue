@@ -21,8 +21,7 @@ export default {
     };
   },
   async created() {
-    var { data } = await this.$prismic.client.getSingle("skills");
-    this.skills = data.skills;
+    this.skills = await this.$api.getSkills();
   }
 };
 </script>

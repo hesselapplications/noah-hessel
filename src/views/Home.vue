@@ -7,7 +7,7 @@
       <experience></experience>
       <skills></skills>
       <projects></projects>
-      <!-- <blog-posts></blog-posts> -->
+      <blog-posts></blog-posts>
     </div>
   </div>
 </template>
@@ -17,7 +17,7 @@ import AboutMe from "@/views/AboutMe";
 import Experience from "@/views/Experience";
 import Projects from "@/views/Projects";
 import Skills from "@/views/Skills";
-// import BlogPosts from "@/views/BlogPosts";
+import BlogPosts from "@/views/BlogPosts";
 
 export default {
   components: {
@@ -25,7 +25,7 @@ export default {
     Experience,
     Projects,
     Skills,
-    // BlogPosts,
+    BlogPosts,
   },
 };
 </script>

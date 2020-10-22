@@ -3,9 +3,9 @@
     <v-row justify="center">
       <v-col xl="6" lg="8" md="10" cols="12">
         <v-card>
-          <image-viewer :src="blogPost.data.heading_image.url"></image-viewer>
-          <prismic-rich-text :field="blogPost.data.title" />
-          <prismic-rich-text :field="blogPost.data.description" />
+          <image-viewer :src="blogPost.src"></image-viewer>
+          <prismic-rich-text :field="blogPost.title" />
+          <prismic-rich-text :field="blogPost.description" />
         </v-card>
       </v-col>
     </v-row>
@@ -28,8 +28,7 @@ export default {
     };
   },
   async created() {
-    this.blogPost = await this.$prismic.client.getByUID("blog_post", this.uid);
-    console.log(this.blogPost);
+    this.blogPost = await this.$api.getBlogPost(this.uid);
   },
 };
 </script>

@@ -28,19 +28,7 @@ export default {
     };
   },
   async created() {
-    var { results } = await this.$prismic.client.query(
-      this.$prismic.Predicates.at("document.type", "project"),
-      { orderings: "[my.project.first_publication_date]" }
-    );
-
-    this.projects = results.map(result => {
-      return {
-        src: result.data.heading_images.map(heading_image => heading_image.heading_image.url),
-        title: result.data.title[0].text,
-        description: result.data.description[0].text,
-        url: result.data.project_link.url
-      }
-    });
+    this.projects = await this.$api.getProjects();
   },
 };
 </script>
