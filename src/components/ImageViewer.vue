@@ -3,9 +3,8 @@
   <v-responsive
     v-if="src.length > 1"
     :aspect-ratio="aspectRatio"
-    @click.stop
   >
-    <v-carousel hide-delimiters show-arrows-on-hover height="auto" cycle>
+    <v-carousel hide-delimiters :show-arrows="false" height="auto" cycle>
       <v-carousel-item
         v-for="(source, index) in src"
         :aspect-ratio="aspectRatio"
