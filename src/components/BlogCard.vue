@@ -7,7 +7,7 @@
       height="100%"
     >
       <!-- IMAGES -->
-      <image-viewer :src="src"></image-viewer>
+      <image-viewer class="pa-4" :src="src"></image-viewer>
 
       <v-divider></v-divider>
 

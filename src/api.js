@@ -84,11 +84,13 @@ export default {
     // BLOG POST
     async getBlogPost(uid) {
         var blogPost = await getByUID("blog_post", uid);
+        console.log(blogPost);
         return {
             datePosted: blogPost.first_publication_date,
             src: blogPost.data.heading_images.map(heading_image => heading_image.heading_image.url),
             title: blogPost.data.title,
-            description: blogPost.data.description
+            description: blogPost.data.description,
+            slices: blogPost.data.body
         };
     }
 }

@@ -6,7 +6,7 @@
     <v-row justify="center">
       <v-col xl="6" lg="8" md="10" cols="12">
         <v-card>
-          <image-viewer :src="blogPost.src"></image-viewer>
+          <image-viewer class="pa-8" :src="blogPost.src"></image-viewer>
           <v-divider></v-divider>
           <v-card-title>
             <prismic-rich-text :field="blogPost.title" />
@@ -14,6 +14,16 @@
           <v-card-text>{{ datePosted }}</v-card-text>
           <v-card-text>
             <prismic-rich-text :field="blogPost.description" />
+          </v-card-text>
+          <v-card-text v-for="(slice, index) in blogPost.slices" :key="index">
+            <prismic-rich-text
+              v-if="slice.slice_type == 'text'"
+              :field="slice.primary.text"
+            />
+            <image-viewer
+              v-else-if="slice.slice_type == 'image_gallery'"
+              :src="slice.items.map((item) => item.gallery_image.url)"
+            ></image-viewer>
           </v-card-text>
         </v-card>
       </v-col>
@@ -39,12 +49,12 @@ export default {
   },
   computed: {
     datePosted() {
-      return moment(this.blogPost.datePosted).format('MMM Do YYYY');
-    }
+      return moment(this.blogPost.datePosted).format("MMM Do YYYY");
+    },
   },
   async created() {
     this.blogPost = await this.$api.getBlogPost(this.uid);
-  }
+  },
 };
 </script>
 
