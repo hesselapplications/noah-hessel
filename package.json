@@ -13,6 +13,7 @@
     "@sanity/image-url": "^0.140.19",
     "core-js": "^3.6.5",
     "moment": "^2.29.1",
+    "prismjs": "^1.22.0",
     "roboto-fontface": "*",
     "sanity-blocks-vue-component": "^0.1.0",
     "vue": "^2.6.11",

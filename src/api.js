@@ -5,7 +5,7 @@ const client = sanityClient({
     projectId: 'ksitws1i',
     dataset: 'production',
     token: null, // leave blank to be anonymous user
-    useCdn: true // `false` if you want to ensure fresh data
+    useCdn: process.env.NODE_ENV == 'production' // `false` if you want to ensure fresh data
 })
 
 const imageUrlBuilder = sanityImageUrlBuilder(client)

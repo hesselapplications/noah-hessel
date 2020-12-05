@@ -46,7 +46,12 @@ export default {
     },
   },
   async created() {
-    this.post = await this.$api.getBlogPost(this.slug);
+    try {
+      this.post = await this.$api.getBlogPost(this.slug);
+
+    } catch (error) {
+      this.$router.push("/");
+    }
   },
 };
 </script>
