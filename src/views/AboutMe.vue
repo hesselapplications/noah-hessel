@@ -7,7 +7,7 @@
       <div
         class="display-2 text-uppercase font-weight-black grey--text text--darken-3 mb-3"
       >
-        <prismic-rich-text :field="aboutMe.aboutMe" />
+        <block-content :blocks="aboutMe.aboutMe"></block-content>
       </div>
       <div>
         <v-tooltip v-for="(link, index) in aboutMe.links" :key="index" bottom>
@@ -34,8 +34,12 @@
 
 <script>
 import api from "@/api.js"
+import BlockContent from "@/components/BlockContent"
 
 export default {
+  components: {
+    BlockContent
+  },
   data() {
     return {
       aboutMe: null

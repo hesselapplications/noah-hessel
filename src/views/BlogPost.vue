@@ -1,29 +1,20 @@
 <template>
-  <v-container v-if="blogPost">
+  <v-container v-if="post">
     <v-btn class="mt-11" color="primary" fab dark absolute top left to="/">
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
     <v-row justify="center">
       <v-col xl="6" lg="8" md="10" cols="12">
         <v-card>
-          <image-viewer class="pa-8" :src="blogPost.src"></image-viewer>
+          <image-viewer :src="post.src"></image-viewer>
           <v-divider></v-divider>
-          <v-card-title>
-            <prismic-rich-text :field="blogPost.title" />
+          <v-card-title class="pb-0">
+            {{ post.title}}
           </v-card-title>
           <v-card-text>{{ datePosted }}</v-card-text>
+          <v-divider></v-divider>
           <v-card-text>
-            <prismic-rich-text :field="blogPost.description" />
-          </v-card-text>
-          <v-card-text v-for="(slice, index) in blogPost.slices" :key="index">
-            <prismic-rich-text
-              v-if="slice.slice_type == 'text'"
-              :field="slice.primary.text"
-            />
-            <image-viewer
-              v-else-if="slice.slice_type == 'image_gallery'"
-              :src="slice.items.map((item) => item.gallery_image.url)"
-            ></image-viewer>
+            <block-content :blocks="post.body" />
           </v-card-text>
         </v-card>
       </v-col>
@@ -34,26 +25,28 @@
 <script>
 import moment from "moment";
 import ImageViewer from "@/components/ImageViewer";
+import BlockContent from "@/components/BlockContent"
 
 export default {
   components: {
     ImageViewer,
+    BlockContent
   },
   props: {
-    uid: null,
+    slug: null,
   },
   data() {
     return {
-      blogPost: null,
+      post: null,
     };
   },
   computed: {
     datePosted() {
-      return moment(this.blogPost.datePosted).format("MMM Do YYYY");
+      return moment(this.post.datePosted).format("MMM Do YYYY");
     },
   },
   async created() {
-    this.blogPost = await this.$api.getBlogPost(this.uid);
+    this.post = await this.$api.getBlogPost(this.slug);
   },
 };
 </script>

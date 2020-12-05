@@ -12,7 +12,7 @@ export default new Router({
       component: () => import('./views/Home.vue')
     },
     {
-      path: '/:uid',
+      path: '/:slug',
       props: true,
       component: () => import('./views/BlogPost.vue')
     }

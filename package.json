@@ -9,12 +9,12 @@
   },
   "dependencies": {
     "@mdi/font": "^5.7.55",
-    "@prismicio/vue": "^2.0.7",
+    "@sanity/client": "^2.0.9",
+    "@sanity/image-url": "^0.140.19",
     "core-js": "^3.6.5",
     "moment": "^2.29.1",
-    "prismic-dom": "^2.2.4",
-    "prismic-javascript": "^3.0.2",
     "roboto-fontface": "*",
+    "sanity-blocks-vue-component": "^0.1.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuetify": "^2.2.11"

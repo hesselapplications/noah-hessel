@@ -7,15 +7,15 @@
       height="100%"
     >
       <!-- IMAGES -->
-      <image-viewer class="pa-4" :src="src"></image-viewer>
+      <image-viewer :src="post.src"></image-viewer>
 
       <v-divider></v-divider>
 
       <!-- TITLE -->
-      <v-card-title class="title pb-2">{{title}}</v-card-title>
+      <v-card-title class="title pb-2">{{post.title}}</v-card-title>
 
       <!-- DESCRIPTION -->
-      <v-card-text class="grey--text text--darken-1 pt-1 font-italic">{{description}}</v-card-text>
+      <v-card-text class="grey--text text--darken-1 pt-1 font-italic">{{post.description}}</v-card-text>
     </v-card>
   </v-hover>
 </template>
@@ -28,14 +28,11 @@ export default {
     ImageViewer
   },
   props: {
-    src: Array,
-    title: String,
-    description: String,
-    uid: String
+    post: Object,
   },
   methods: {
     goToBlogPost() {
-      this.$router.push(this.uid);
+      this.$router.push(this.post.slug.current);
     }
   }
 };

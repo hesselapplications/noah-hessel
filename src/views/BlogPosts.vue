@@ -1,13 +1,8 @@
 <template>
-  <Section label="Blogs" class="blue-grey">
+  <Section label="Blog" class="blue-grey">
     <v-layout row wrap>
       <v-flex xs12 lg4 v-for="(post, index) in blogPosts" :key="index">
-        <BlogCard
-          :src="post.src"
-          :title="post.title"
-          :description="post.description"
-          :uid="post.uid"
-        ></BlogCard>
+        <BlogCard :post="post"></BlogCard>
       </v-flex>
     </v-layout>
   </Section>
