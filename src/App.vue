@@ -10,6 +10,10 @@
 export default {};
 </script>
 <style>
+* {
+  word-break: normal !important;
+}
+
 p:last-child {
   margin-bottom: 0px;
 }
