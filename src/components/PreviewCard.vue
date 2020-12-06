@@ -3,7 +3,8 @@
     <v-card
       slot-scope="{ hover }"
       :class="`elevation-${hover ? 12 : 4}`"
-      @click="goToUrl"
+      v-bind="$attrs"
+      v-on="$listeners"
       height="100%"
     >
       <!-- IMAGES -->
@@ -12,10 +13,10 @@
       <v-divider></v-divider>
 
       <!-- TITLE -->
-      <v-card-title class="title pb-2">{{title}}</v-card-title>
+      <v-card-title class="text-subtitle-2 font-weight-bold pb-0">{{title}}</v-card-title>
 
       <!-- DESCRIPTION -->
-      <v-card-text class="grey--text text--darken-1 pt-1 font-italic">{{description}}</v-card-text>
+      <v-card-text class="text-caption grey--text text--darken-1 pt-1">{{description}}</v-card-text>
     </v-card>
   </v-hover>
 </template>
@@ -30,13 +31,7 @@ export default {
   props: {
     src: Array,
     title: String,
-    description: String,
-    url: String
+    description: String
   },
-  methods: {
-    goToUrl() {
-      window.location.href = this.url;
-    }
-  }
 };
 </script>

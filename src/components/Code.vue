@@ -15,9 +15,9 @@
         text
         small
         data-clipboard-target="#code"
-        @click="snackbar = true"
+        color="grey"
       >
-        <v-icon small left>mdi-content-copy</v-icon>
+        <v-icon small left>{{ copyIcon }}</v-icon>
         Copy
       </v-btn>
     </v-toolbar>
@@ -29,16 +29,6 @@
       id="code"
       class="my-0 px-3 inline-color match-braces"
     ><code :class="`language-${language}`">{{ code }}</code></pre>
-
-    <!-- SNACKBAR -->
-    <v-snackbar v-model="snackbar" timeout="1000">
-      Copied!
-      <template v-slot:action="{ attrs }">
-        <v-btn color="grey" text v-bind="attrs" @click="snackbar = false">
-          Close
-        </v-btn>
-      </template>
-    </v-snackbar>
   </v-card>
 </template>
 
@@ -54,7 +44,7 @@ export default {
   },
   data() {
     return {
-      snackbar: false,
+      copyIcon: "mdi-content-copy"
     };
   },
   mounted() {
@@ -62,6 +52,11 @@ export default {
     const clipboard = new Clipboard("#clipboard");
     clipboard.on("success", (event) => {
       event.clearSelection();
+
+      this.copyIcon = "mdi-check";
+      setTimeout(() => {
+        this.copyIcon = "mdi-content-copy";
+      }, 3000);
     });
   },
 };

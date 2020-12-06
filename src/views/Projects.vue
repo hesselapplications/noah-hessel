@@ -1,30 +1,31 @@
 <template>
   <Section label="Projects" class="deep-orange lighten-1">
-    <v-layout row wrap>
-      <v-flex xs12 lg4 v-for="(project, index) in projects" :key="index">
-        <Project
-          :src="project.src"
-          :title="project.title"
-          :description="project.description"
-          :url="project.url"
-        ></Project>
-      </v-flex>
-    </v-layout>
+    <v-row>
+      <v-col
+        cols="6"
+        md="4"
+        xl="3"
+        v-for="(project, index) in projects"
+        :key="index"
+      >
+        <preview-card v-bind="project"></preview-card>
+      </v-col>
+    </v-row>
   </Section>
 </template>
 
 <script>
 import Section from "@/components/Section";
-import Project from "@/components/Project";
+import PreviewCard from "@/components/PreviewCard";
 
 export default {
   components: {
     Section,
-    Project
+    PreviewCard,
   },
   data() {
     return {
-      projects: []
+      projects: [],
     };
   },
   async created() {

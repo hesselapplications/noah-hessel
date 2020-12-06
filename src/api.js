@@ -39,7 +39,7 @@ export default {
 
     // PROJECTS
     async getProjects() {
-        const projects = await client.fetch('*[_type == "project"]');
+        const projects = await client.fetch('*[_type == "project"] | order(_createdAt desc)');
         return projects.map(project => {
             return {
                 src: [getImage(project.mainImage).width(320).height(180).url()],

@@ -16,6 +16,10 @@ export default new Router({
       component: () => import('./views/Contact.vue')
     },
     {
+      path: '/blog',
+      component: () => import('./views/AllBlogPosts.vue')
+    },
+    {
       path: '/blog/:slug',
       props: true,
       component: () => import('./views/BlogPost.vue')

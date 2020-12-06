@@ -2,10 +2,10 @@
   <Section label="Experience" class="orange lighten-2">
     <v-expansion-panels accordion>
       <v-expansion-panel v-for="(e, index) in experience" :key="index">
-        <v-expansion-panel-header>
+        <v-expansion-panel-header class="px-4 py-3">
           <div>
-            <div class="body-1 font-weight-bold">{{ e.title }}</div>
-            <span class="body-2 grey--text font-weight-light"
+            <div class="text-subtitle-2 font-weight-bold">{{ e.title }}</div>
+            <span class="text-caption grey--text font-weight-light"
               >{{ e.organization }}, {{ formatDate(e.startDate) }} — {{ formatDate(e.endDate) }}</span
             >
           </div>

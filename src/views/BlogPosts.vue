@@ -1,21 +1,27 @@
 <template>
-  <Section label="Blog" class="blue-grey">
-    <v-layout row wrap>
-      <v-flex xs12 lg4 v-for="(post, index) in blogPosts" :key="index">
-        <BlogCard :post="post"></BlogCard>
-      </v-flex>
-    </v-layout>
+  <Section label="Blog Posts" to="/blog" class="blue-grey">
+    <v-row>
+      <v-col
+        cols="6"
+        md="4"
+        xl="3"
+        v-for="(post, index) in blogPosts"
+        :key="index"
+      >
+        <preview-card v-bind="post" :to="`blog/${post.slug.current}`"></preview-card>
+      </v-col>
+    </v-row>
   </Section>
 </template>
 
 <script>
 import Section from "@/components/Section";
-import BlogCard from "@/components/BlogCard";
+import PreviewCard from "@/components/PreviewCard";
 
 export default {
   components: {
     Section,
-    BlogCard,
+    PreviewCard
   },
   data() {
     return {

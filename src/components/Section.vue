@@ -1,45 +1,36 @@
 <template>
   <v-container grid-list-lg>
-    <v-layout justify-center>
-      <v-flex xs12 sm10>
-        <div class="display-1 text-uppercase font-weight-medium white--text">{{label}}</div>
-      </v-flex>
-    </v-layout>
-    <v-layout
-      align-center
-      justify-center
-      v-resize="() => minHeight = this.getMinHeight()"
-      :style="{'min-height': minHeight + 'px'}"
-    >
-      <v-flex xs12 sm10 class="slide-y">
+    <v-row justify="center">
+      <v-col cols="12" sm="10">
+        <v-row align="center" no-gutters>
+          <v-col
+            cols="auto"
+            class="text-h5 text-uppercase font-weight-medium white--text mr-2"
+            >{{ label }}</v-col
+          >
+          <v-col cols="auto" v-if="to">
+            <v-btn small icon dark :to="to">
+              <v-icon>mdi-arrow-right</v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-col>
+    </v-row>
+
+    <v-row justify="center">
+      <v-col cols="12" sm="10" class="slide-y pt-4 pb-8">
         <slot></slot>
-      </v-flex>
-    </v-layout>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
 export default {
   props: {
-    label: String
+    label: String,
+    to: String
   },
-  computed: {
-    style() {
-      return {
-        "min-height": window.innerHeight / 2 + "px"
-      };
-    }
-  },
-  data() {
-    return {
-      minHeight: this.getMinHeight()
-    };
-  },
-  methods: {
-    getMinHeight() {
-      return window.innerHeight / 2;
-    }
-  }
 };
 </script>
 

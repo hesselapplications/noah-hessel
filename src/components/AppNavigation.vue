@@ -7,6 +7,7 @@
 
       <v-toolbar-items>
         <v-btn text to="/">Home</v-btn>
+        <v-btn text to="/blog">Blog</v-btn>
         <v-btn text to="/contact">Contact</v-btn>
       </v-toolbar-items>
     </v-app-bar>

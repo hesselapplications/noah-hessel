@@ -4,7 +4,7 @@
 
     <v-container>
       <v-row justify="center">
-        <v-col xl="6" lg="8" md="10" cols="12">
+        <v-col xl="4" lg="6" md="8" sm="10" cols="12">
           <!-- FORM -->
           <v-form ref="form" name="contact" @submit="submit">
             <v-card>
@@ -13,7 +13,7 @@
               <v-card-text>
                 <v-row dense>
                   <!-- NAME -->
-                  <v-col cols="6">
+                  <v-col cols="12" md="6">
                     <v-text-field
                       v-model="form.name"
                       label="Name"
@@ -27,7 +27,7 @@
                   </v-col>
 
                   <!-- EMAIL -->
-                  <v-col cols="6">
+                  <v-col cols="12" md="6">
                     <v-text-field
                       v-model="form.email"
                       label="Email"
