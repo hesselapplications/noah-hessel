@@ -2,20 +2,22 @@
   <div>
     <app-navigation title="Contact"></app-navigation>
 
-    <!-- FORM -->
     <v-container>
       <v-row justify="center">
         <v-col xl="6" lg="8" md="10" cols="12">
-          <v-form ref="form" @submit="submit">
+          <!-- FORM -->
+          <v-form ref="form" name="contact" @submit="submit">
             <v-card>
               <v-card-title> Contact Me </v-card-title>
               <v-divider></v-divider>
               <v-card-text>
                 <v-row dense>
+                  <!-- NAME -->
                   <v-col cols="6">
                     <v-text-field
-                      v-model="name"
+                      v-model="form.name"
                       label="Name"
+                      name="name"
                       hide-details
                       :rules="[(v) => !!v || 'Name is required']"
                       class="required"
@@ -23,10 +25,13 @@
                       outlined
                     ></v-text-field>
                   </v-col>
+
+                  <!-- EMAIL -->
                   <v-col cols="6">
                     <v-text-field
-                      v-model="email"
+                      v-model="form.email"
                       label="Email"
+                      name="email"
                       type="email"
                       hide-details
                       :rules="[(v) => !!v || 'Name is required']"
@@ -35,9 +40,12 @@
                       outlined
                     ></v-text-field>
                   </v-col>
+
+                  <!-- MESSAGE -->
                   <v-col cols="12">
                     <v-textarea
-                      v-model="message"
+                      v-model="form.message"
+                      name="message"
                       label="Message"
                       hide-details
                       :rules="[(v) => !!v || 'Message is required']"
@@ -87,9 +95,11 @@ export default {
     return {
       snackbar: false,
       snackbarMessage: null,
-      name: null,
-      email: null,
-      message: null,
+      form: {
+        name: null,
+        email: null,
+        message: null,
+      },
     };
   },
   methods: {
@@ -99,11 +109,12 @@ export default {
       if (!isValid) {
         return;
       }
-      
+
       try {
         await axios.post(
           "/",
           qs.stringify({
+            "form-name": "contact",
             name: this.name,
             email: this.email,
             message: this.message,
@@ -115,8 +126,8 @@ export default {
 
         this.snackbarMessage = "Message Sent!";
         this.$refs.form.reset();
-
       } catch (error) {
+        console.log(error);
         this.snackbarMessage = "Oops! Something went wrong";
       }
 
