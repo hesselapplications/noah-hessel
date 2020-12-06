@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     goToBlogPost() {
-      this.$router.push(this.post.slug.current);
+      this.$router.push(`blog/${this.post.slug.current}`);
     }
   }
 };
