@@ -27,7 +27,7 @@
     <!-- CODE -->
     <pre
       id="code"
-      class="my-0 px-3"
+      class="my-0 px-3 inline-color match-braces"
     ><code :class="`language-${language}`">{{ code }}</code></pre>
 
     <!-- SNACKBAR -->
@@ -50,7 +50,7 @@ export default {
   props: {
     code: String,
     language: String,
-    filename: String
+    filename: String,
   },
   data() {
     return {
@@ -70,5 +70,9 @@ export default {
 #code {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
+}
+
+.inline-color-wrapper {
+  margin-right: 6px !important;
 }
 </style>

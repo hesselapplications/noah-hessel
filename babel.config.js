@@ -12,7 +12,8 @@ module.exports = {
                 "markup"
             ],
             "plugins": [
-                "line-numbers"
+                "inline-color",
+                "match-braces"
             ],
             "theme": "default",
             "css": true
