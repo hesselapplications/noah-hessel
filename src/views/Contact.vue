@@ -115,9 +115,7 @@ export default {
           "/",
           qs.stringify({
             "form-name": "contact",
-            name: this.name,
-            email: this.email,
-            message: this.message,
+            ...this.form,
           }),
           {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -127,7 +125,6 @@ export default {
         this.snackbarMessage = "Message Sent!";
         this.$refs.form.reset();
       } catch (error) {
-        console.log(error);
         this.snackbarMessage = "Oops! Something went wrong";
       }
 
