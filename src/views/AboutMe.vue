@@ -20,7 +20,7 @@
               dark
               small
               class="ml-0 mr-3"
-              :href="link.url"
+              @click="goToUrl(link.url)"
             >
               <v-icon>{{ link.icon }}</v-icon>
             </v-btn>
@@ -48,6 +48,18 @@ export default {
   async created() {
     this.aboutMe = await api.getAboutMe();
   },
+  methods: {
+    goToUrl(url) {
+      const rootUrl = "https://noahhessel.com"
+      if (url.includes("noahhessel.com")) {
+        const path = url.replace(rootUrl, "");
+        this.$router.push(path);
+
+      } else {
+        window.location.href = url;
+      }
+    }
+  }
 };
 </script>
 
