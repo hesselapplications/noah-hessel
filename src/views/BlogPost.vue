@@ -1,15 +1,6 @@
 <template>
   <div>
-    <v-app-bar flat dark color="primary">
-      <v-btn icon @click="$router.go(-1)"><v-icon>mdi-arrow-left</v-icon></v-btn>
-
-      <v-spacer></v-spacer>
-
-      <v-toolbar-items>
-        <v-btn text to="/">Home</v-btn>
-        <v-btn text to="/blog">Blog</v-btn>
-      </v-toolbar-items>
-    </v-app-bar>
+    <app-navigation title="Blog"></app-navigation>
 
     <v-container v-if="post">
       <v-row justify="center">
@@ -36,11 +27,13 @@
 import moment from "moment";
 import ImageViewer from "@/components/ImageViewer";
 import BlockContent from "@/components/BlockContent";
+import AppNavigation from "@/components/AppNavigation";
 
 export default {
   components: {
     ImageViewer,
     BlockContent,
+    AppNavigation
   },
   props: {
     slug: null,

@@ -12,9 +12,17 @@ export default new Router({
       component: () => import('./views/Home.vue')
     },
     {
+      path: '/contact',
+      component: () => import('./views/Contact.vue')
+    },
+    {
       path: '/blog/:slug',
       props: true,
       component: () => import('./views/BlogPost.vue')
+    },
+    {
+      path: '*',
+      component: () => import('./views/Home.vue')
     }
   ]
 })

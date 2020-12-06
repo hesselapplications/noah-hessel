@@ -42,7 +42,7 @@ export default {
         const projects = await client.fetch('*[_type == "project"]');
         return projects.map(project => {
             return {
-                src: [getImage(project.mainImage).width(300).height(169).url()],
+                src: [getImage(project.mainImage).width(320).height(180).url()],
                 ...project
             }
         })
@@ -50,11 +50,10 @@ export default {
 
     // BLOG POSTS
     async getBlogPosts() {
-        const posts = await client.fetch('*[_type == "post"]');
-        console.log(posts)
+        const posts = await client.fetch('*[_type == "post"] | order(_createdAt desc)');
         return posts.map(post => {
             return {
-                src: [getImage(post.mainImage).width(300).height(169).url()],
+                src: [getImage(post.mainImage).width(320).height(180).url()],
                 ...post
             }
         })

@@ -20,7 +20,7 @@
               dark
               small
               class="ml-0 mr-3"
-              :href="link.link"
+              :href="link.url"
             >
               <v-icon>{{ link.icon }}</v-icon>
             </v-btn>
