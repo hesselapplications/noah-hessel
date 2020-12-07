@@ -39,6 +39,13 @@ export default {
 .content-wrapper {
   width: 65%;
   margin-left: 35%;
+  min-height: 100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.content-wrapper > *:last-child {
+  flex: 1;
 }
 
 @keyframes slideX {
