@@ -8,7 +8,7 @@
         v-for="(project, index) in projects"
         :key="index"
       >
-        <preview-card v-bind="project"></preview-card>
+        <preview-card v-bind="project" @click="goToUrl(project.url)"></preview-card>
       </v-col>
     </v-row>
   </Section>
@@ -31,6 +31,11 @@ export default {
   async created() {
     this.projects = await this.$api.getProjects();
   },
+  methods: {
+    goToUrl(url) {
+      window.location.href = url;
+    }
+  }
 };
 </script>
 
