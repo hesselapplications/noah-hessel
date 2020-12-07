@@ -10,13 +10,12 @@
         :aspect-ratio="aspectRatio"
         :key="index"
         :src="source"
-        contain
       ></v-carousel-item>
     </v-carousel>
   </v-responsive>
 
   <!-- SINGLE IMAGE -->
-  <v-img v-else :aspect-ratio="aspectRatio" :src="src[0]" contain></v-img>
+  <v-img v-else :aspect-ratio="aspectRatio" :src="src[0]"></v-img>
 </template>
 
 <script>
