@@ -10,7 +10,7 @@
       dark
     >
       <v-row class="fill-height text-center" no-gutters align="center" justify="center">
-        <v-col cols="auto">
+        <v-col cols="auto" class="pa-10">
           <v-icon large>{{ icon }}</v-icon>
           <div class="text-subtitle-2 pt-2">{{ label }}</div>
         </v-col>
