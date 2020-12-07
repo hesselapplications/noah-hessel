@@ -11,7 +11,7 @@
           </div>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
-          <block-content :blocks="e.accomplishments"></block-content>
+          <block-content class="text-body-2 grey--text text--darken-1" :blocks="e.accomplishments"></block-content>
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
@@ -45,10 +45,9 @@ export default {
 };
 </script>
 <style scoped>
-.v-expansion-panel-content {
-  font-size: 14px !important;
+.v-expansion-panel-content >>> .v-expansion-panel-content__wrap {
+  padding-left: 10px;
 }
-
 .v-expansion-panel-content >>> ul {
   list-style-type: circle;
 }

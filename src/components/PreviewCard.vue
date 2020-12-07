@@ -1,37 +1,33 @@
 <template>
-  <v-hover>
-    <v-card
-      slot-scope="{ hover }"
-      :class="`elevation-${hover ? 12 : 4}`"
-      v-bind="$attrs"
-      v-on="$listeners"
-      height="100%"
-    >
-      <!-- IMAGES -->
-      <image-viewer :src="src"></image-viewer>
+  <v-card v-bind="$attrs" v-on="$listeners" hover height="100%">
+    <!-- IMAGES -->
+    <image-viewer :src="src"></image-viewer>
 
-      <v-divider></v-divider>
+    <v-divider></v-divider>
 
-      <!-- TITLE -->
-      <v-card-title class="text-subtitle-2 font-weight-bold pb-0">{{title}}</v-card-title>
+    <!-- TITLE -->
+    <v-card-title class="text-subtitle-2 font-weight-bold pb-0">{{
+      title
+    }}</v-card-title>
 
-      <!-- DESCRIPTION -->
-      <v-card-text class="text-caption grey--text text--darken-1 pt-1">{{description}}</v-card-text>
-    </v-card>
-  </v-hover>
+    <!-- DESCRIPTION -->
+    <v-card-text class="text-caption grey--text text--darken-1 pt-1">{{
+      description
+    }}</v-card-text>
+  </v-card>
 </template>
 
 <script>
-import ImageViewer from "@/components/ImageViewer"
+import ImageViewer from "@/components/ImageViewer";
 
 export default {
   components: {
-    ImageViewer
+    ImageViewer,
   },
   props: {
     src: Array,
     title: String,
-    description: String
+    description: String,
   },
 };
 </script>

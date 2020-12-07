@@ -2,7 +2,7 @@
   <div>
     <app-navigation></app-navigation>
     <v-container>
-      <v-row>
+      <v-row justify="center">
         <v-col
           cols="6"
           md="4"
