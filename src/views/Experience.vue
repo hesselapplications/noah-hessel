@@ -1,5 +1,5 @@
 <template>
-  <Section label="Experience" class="orange lighten-2">
+  <home-section label="Experience" color="#7E4E52">
     <v-expansion-panels accordion>
       <v-expansion-panel v-for="(e, index) in experience" :key="index">
         <v-expansion-panel-header class="px-4 py-3">
@@ -15,17 +15,17 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
-  </Section>
+  </home-section>
 </template>
 
 <script>
 import moment from 'moment';
-import Section from "@/components/Section";
+import HomeSection from "@/components/HomeSection";
 import BlockContent from "@/components/BlockContent";
 
 export default {
   components: {
-    Section,
+    HomeSection,
     BlockContent
   },
   data() {

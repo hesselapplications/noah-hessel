@@ -1,5 +1,5 @@
 <template>
-  <Section label="Blog Posts" to="/blog" class="blue-grey">
+  <home-section label="Blog Posts" to="/blog" color="#434D60">
     <v-row>
       <v-col
         cols="6"
@@ -11,16 +11,16 @@
         <preview-card v-bind="post" :to="`blog/${post.slug.current}`"></preview-card>
       </v-col>
     </v-row>
-  </Section>
+  </home-section>
 </template>
 
 <script>
-import Section from "@/components/Section";
+import HomeSection from "@/components/HomeSection";
 import PreviewCard from "@/components/PreviewCard";
 
 export default {
   components: {
-    Section,
+    HomeSection,
     PreviewCard
   },
   data() {

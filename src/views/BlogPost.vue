@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-navigation title="Blog"></app-navigation>
+    <app-navigation></app-navigation>
 
     <v-container v-if="post">
       <v-row justify="center">

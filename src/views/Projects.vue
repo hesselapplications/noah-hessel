@@ -1,5 +1,5 @@
 <template>
-  <Section label="Projects" class="deep-orange lighten-1">
+  <home-section label="Projects" color="#2C363F">
     <v-row>
       <v-col
         cols="6"
@@ -11,16 +11,16 @@
         <preview-card v-bind="project" @click="goToUrl(project.url)"></preview-card>
       </v-col>
     </v-row>
-  </Section>
+  </home-section>
 </template>
 
 <script>
-import Section from "@/components/Section";
+import HomeSection from "@/components/HomeSection";
 import PreviewCard from "@/components/PreviewCard";
 
 export default {
   components: {
-    Section,
+    HomeSection,
     PreviewCard,
   },
   data() {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-navigation title="Blog Posts"></app-navigation>
+    <app-navigation></app-navigation>
     <v-container>
       <v-row>
         <v-col

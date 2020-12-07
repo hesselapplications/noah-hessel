@@ -40,7 +40,6 @@ export default {
     // PROJECTS
     async getProjects() {
         const projects = await client.fetch('*[_type == "project"] {mainImage, title, description, url} | order(_createdAt desc)');
-        console.log(projects)
         return projects.map(project => {
             return {
                 src: [getImage(project.mainImage).width(320).height(180).url()],
@@ -64,7 +63,6 @@ export default {
     async getBlogPost(slug) {
         const posts = await client.fetch(`*[_type == "post" && slug.current == "${slug}"] {mainImage, title, body, publishedAt}`);
         const post = posts[0];
-        console.log(post)
 
         return {
             src: [getImage(post.mainImage).width(800).height(450).url()],

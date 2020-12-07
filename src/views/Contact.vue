@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-navigation title="Contact"></app-navigation>
+    <app-navigation></app-navigation>
 
     <v-container>
       <v-row justify="center">
