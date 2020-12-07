@@ -39,7 +39,8 @@ export default {
 
     // PROJECTS
     async getProjects() {
-        const projects = await client.fetch('*[_type == "project"] | order(_createdAt desc)');
+        const projects = await client.fetch('*[_type == "project"] {mainImage, title, description, url} | order(_createdAt desc)');
+        console.log(projects)
         return projects.map(project => {
             return {
                 src: [getImage(project.mainImage).width(320).height(180).url()],
@@ -50,7 +51,7 @@ export default {
 
     // BLOG POSTS
     async getBlogPosts() {
-        const posts = await client.fetch('*[_type == "post"] | order(_createdAt desc)');
+        const posts = await client.fetch('*[_type == "post"] {mainImage, title, description, slug} | order(_createdAt desc)');
         return posts.map(post => {
             return {
                 src: [getImage(post.mainImage).width(320).height(180).url()],
@@ -61,8 +62,9 @@ export default {
 
     // BLOG POST
     async getBlogPost(slug) {
-        const posts = await client.fetch(`*[_type == "post" && slug.current == "${slug}"]`);
+        const posts = await client.fetch(`*[_type == "post" && slug.current == "${slug}"] {mainImage, title, body, publishedAt}`);
         const post = posts[0];
+        console.log(post)
 
         return {
             src: [getImage(post.mainImage).width(800).height(450).url()],
