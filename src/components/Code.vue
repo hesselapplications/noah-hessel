@@ -1,7 +1,7 @@
 <template>
   <v-card flat>
     <!-- TOOLBAR -->
-    <v-toolbar dark flat height="35" color="primary">
+    <v-toolbar dark flat height="35" color="secondary">
       <!-- TITLE -->
       <v-toolbar-title class="caption font-weight-bold text-uppercase">
         {{ filename || language }}

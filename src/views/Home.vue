@@ -6,8 +6,8 @@
     <div :class="{ 'content-wrapper': $vuetify.breakpoint.mdAndUp }">
       <experience></experience>
       <skills></skills>
-      <blog-posts></blog-posts>
       <projects></projects>
+      <blog-posts></blog-posts>
     </div>
   </div>
 </template>
