@@ -1,5 +1,5 @@
 <template>
-  <home-section label="Blog Posts" to="/blog" color="#434D60">
+  <home-section label="Blog Posts" to="/blog" color="blogPosts">
     <v-row>
       <!-- POSTS -->
       <v-col

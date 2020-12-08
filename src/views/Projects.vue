@@ -1,5 +1,5 @@
 <template>
-  <home-section label="Projects" color="#2C363F">
+  <home-section label="Projects" color="projects">
     <v-row>
       <v-col
         cols="6"

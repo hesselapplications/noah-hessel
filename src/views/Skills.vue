@@ -1,5 +1,5 @@
 <template>
-  <home-section label="Skills" color="#44404F">
+  <home-section label="Skills" color="skills">
     <v-row>
       <v-col cols="6" lg="3" v-for="(skill, index) in skills" :key="index">
         <skill v-model="skills[index]" class="my-2"></skill>

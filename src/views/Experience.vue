@@ -1,5 +1,5 @@
 <template>
-  <home-section label="Experience" color="#7E4E52">
+  <home-section label="Experience" color="experience">
     <v-expansion-panels accordion>
       <v-expansion-panel v-for="(e, index) in experience" :key="index">
         <v-expansion-panel-header class="px-4 py-3">
