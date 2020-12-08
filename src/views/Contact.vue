@@ -1,15 +1,22 @@
 <template>
-  <div>
+  <div class="fill-height" >
     <app-navigation></app-navigation>
 
-    <v-container>
-      <v-row justify="center">
+    <v-container class="fill-height">
+      <v-row justify="center" align="center">
         <v-col xl="4" lg="6" md="8" sm="10" cols="12">
           <!-- FORM -->
           <v-form ref="form" name="contact" @submit="submit">
             <v-card>
-              <v-card-title> Contact Me </v-card-title>
-              <v-divider></v-divider>
+              <v-app-bar flat dark color="primary">
+                <v-toolbar-title> Contact Me </v-toolbar-title>
+                <v-spacer></v-spacer>
+                <v-btn small depressed color="secondary" type="submit">
+                  <v-icon left small>mdi-send</v-icon>
+                  Submit
+                </v-btn>
+              </v-app-bar>
+
               <v-card-text>
                 <v-row dense>
                   <!-- NAME -->
@@ -56,14 +63,6 @@
                   </v-col>
                 </v-row>
               </v-card-text>
-              <v-divider></v-divider>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn depressed color="primary" type="submit">
-                  <v-icon left small>mdi-send</v-icon>
-                  Submit
-                </v-btn>
-              </v-card-actions>
             </v-card>
           </v-form>
         </v-col>
