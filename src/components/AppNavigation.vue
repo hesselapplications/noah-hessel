@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar flat dark color="primary">
+    <v-app-bar app dark elevate-on-scroll color="primary">
       <v-toolbar-title>Noah Hessel</v-toolbar-title>
 
       <v-spacer></v-spacer>
