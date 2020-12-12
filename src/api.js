@@ -61,9 +61,8 @@ export default {
 
     // BLOG POST
     async getBlogPost(slug) {
-        const posts = await client.fetch(`*[_type == "post" && slug.current == "${slug}"] {mainImage, title, body, publishedAt}`);
+        const posts = await client.fetch(`*[_type == "post" && slug.current == "${slug}"] {mainImage, title, body, publishedAt, "categories": categories[]->title}`);
         const post = posts[0];
-
         return {
             src: [getImage(post.mainImage).width(800).height(450).url()],
             ...post

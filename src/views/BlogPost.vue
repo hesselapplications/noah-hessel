@@ -15,6 +15,12 @@
             <v-card-text>
               <block-content :blocks="post.body" />
             </v-card-text>
+            <div v-if="isCategorized">
+              <v-divider class="grey lighten-4"></v-divider>
+              <v-card-text>
+                <tags :tags="post.categories"></tags>
+              </v-card-text>
+            </div>
           </v-card>
         </v-col>
       </v-row>
@@ -27,6 +33,7 @@
 import moment from "moment";
 import ImageViewer from "@/components/ImageViewer";
 import BlockContent from "@/components/BlockContent";
+import Tags from "@/components/Tags";
 import AppNavigation from "@/components/AppNavigation";
 import Share from "@/components/Share.vue";
 
@@ -36,6 +43,7 @@ export default {
     BlockContent,
     AppNavigation,
     Share,
+    Tags
   },
   props: {
     slug: null,
@@ -49,6 +57,9 @@ export default {
     datePosted() {
       return moment(this.post.datePosted).format("MMMM Do YYYY");
     },
+    isCategorized() {
+      return this.post.categories.length > 0;
+    }
   },
   async created() {
     try {
