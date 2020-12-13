@@ -1,6 +1,6 @@
 <template>
   <home-section label="Projects" color="projects">
-    <v-row>
+    <v-row :dense="$vuetify.breakpoint.smAndDown">
       <v-col
         cols="6"
         md="4"

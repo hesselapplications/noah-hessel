@@ -1,6 +1,6 @@
 <template>
   <home-section label="Skills" color="skills">
-    <v-row>
+    <v-row :dense="$vuetify.breakpoint.smAndDown">
       <v-col cols="6" lg="3" v-for="(skill, index) in skills" :key="index">
         <skill v-model="skills[index]" class="my-2"></skill>
       </v-col>

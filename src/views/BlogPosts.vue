@@ -1,6 +1,6 @@
 <template>
   <home-section label="Blog Posts" to="/blog" color="blogPosts">
-    <v-row>
+    <v-row :dense="$vuetify.breakpoint.smAndDown">
       <!-- POSTS -->
       <v-col
         cols="6"
