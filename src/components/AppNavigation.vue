@@ -44,10 +44,10 @@
           :to="to"
           color="accent"
         >
-          <v-list-item-icon>
+          <v-list-item-icon class="mr-3">
             <v-icon>{{ icon }}</v-icon>
           </v-list-item-icon>
-          <v-list-item-title>{{ title }}</v-list-item-title>
+          <v-list-item-title class="text-subtitle-2">{{ title }}</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
