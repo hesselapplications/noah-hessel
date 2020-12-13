@@ -18,7 +18,7 @@ export default {
     async getMyPictureSrc() {
         const myPictures = await client.fetch(`*[_type == "aboutMe"].myPicture`);
         const myPicture = myPictures[0];
-        return getImage(myPicture).width(40).height(40).url()
+        return getImage(myPicture).width(80).height(80).url()
     },
 
     // ABOUT ME
@@ -26,7 +26,7 @@ export default {
         const data = await client.getDocument("aboutMe");
         return {
             aboutMe: data.aboutMe,
-            src: getImage(data.myPicture).width(175).height(175).url(),
+            src: getImage(data.myPicture).width(200).height(200).url(),
             links: data.links
         }
     },

@@ -1,9 +1,9 @@
 <template>
-  <div class="fill-height" >
+  <div>
     <app-navigation></app-navigation>
 
-    <v-container class="fill-height">
-      <v-row justify="center" align="center">
+    <v-container>
+      <v-row justify="center">
         <v-col xl="4" lg="6" md="8" sm="10" cols="12">
           <!-- FORM -->
           <v-form ref="form" name="contact" @submit="submit">

@@ -9,10 +9,7 @@ export default new Vuetify({
       light: {
         primary: '#52796f',
         secondary: '#354f52',
-        // experience: '#7E4E52',
-        // skills: '#44404F',
-        // blogPosts: '#434D60',
-        // projects: '#2C363F',
+        accent: '#84a98c',
         experience: '#2f3e46',
         skills: '#354f52',
         projects: '#52796f',
