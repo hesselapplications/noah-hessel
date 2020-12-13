@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar app dark elevate-on-scroll color="primary">
+    <v-app-bar app dark elevate-on-scroll color="primary" style="z-index: 8">
       <!-- NAV ICON -->
       <v-app-bar-nav-icon
         v-if="isSmallScreen"
@@ -31,8 +31,10 @@
     <v-navigation-drawer
       v-if="isSmallScreen"
       v-model="drawer"
-      absolute
+      clipped
       temporary
+      app
+      :style="`margin-top: ${$vuetify.application.top}px`"
     >
       <v-list nav dense>
         <v-list-item
