@@ -12,8 +12,10 @@
       </v-row>
 
       <v-row justify="center">
-        <v-col cols="12" sm="10" class="slide-y pt-4 pb-8">
-          <slot></slot>
+        <v-col cols="12" sm="10" class=" pt-4 pb-8">
+          <v-expand-transition>
+            <slot v-if="show"></slot>
+          </v-expand-transition>
         </v-col>
       </v-row>
     </v-container>
@@ -27,7 +29,20 @@ export default {
     to: String,
     color: String,
   },
+  data() {
+    return {
+      show: false
+    }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.show = true;
+    }, 500)
+  }
 };
 </script>
-
-
+<style scoped>
+.expand-transition-enter-active, .expand-transition-leave-active {
+  transition-duration: 1s !important
+}
+</style>

@@ -47,34 +47,4 @@ export default {
 .content-wrapper > *:last-child {
   flex: 1;
 }
-
-@keyframes slideX {
-  0% {
-    transform: translateX(-10%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideY {
-  0% {
-    transform: translateY(-10%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.slide-x {
-  animation: 1s ease-out 0s 1 slideX;
-}
-
-.slide-y {
-  animation: 1s ease-out 0s 1 slideY;
-}
 </style>

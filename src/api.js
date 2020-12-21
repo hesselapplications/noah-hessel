@@ -33,13 +33,15 @@ export default {
 
     // EXPERIENCE
     async getExperience() {
-        const { experience } = await client.getDocument("experience");
+        const { experience } = await client.fetch('*[_type == "experience"][0] {experience[]{title, startDate, organization, accomplishments}}');
         return experience;
     },
 
     // SKILLS
     async getSkills() {
-        const { skills } = await client.getDocument("skills");
+        // const { skills } = await client.fetch('*[_type == "skills"][0] ');
+        const { skills } = await client.fetch('*[_type == "skills"][0] {skills[]{color, icon, label, level}}');
+        console.log(skills)
         return skills;
     },
 
