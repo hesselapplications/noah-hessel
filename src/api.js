@@ -33,7 +33,7 @@ export default {
 
     // EXPERIENCE
     async getExperience() {
-        const { experience } = await client.fetch('*[_type == "experience"][0] {experience[]{title, startDate, organization, accomplishments}}');
+        const { experience } = await client.fetch('*[_type == "experience"][0] {experience[]{title, startDate, endDate, organization, accomplishments}}');
         return experience;
     },
 
