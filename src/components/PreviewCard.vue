@@ -1,7 +1,7 @@
 <template>
   <v-card v-bind="$attrs" v-on="$listeners" hover height="100%">
     <!-- IMAGES -->
-    <image-viewer v-if="$vuetify.breakpoint.smAndUp" :src="src"></image-viewer>
+    <image-viewer v-if="!$vuetify.breakpoint.mobile" :src="src"></image-viewer>
 
     <v-divider></v-divider>
 

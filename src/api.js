@@ -39,18 +39,16 @@ export default {
 
     // SKILLS
     async getSkills() {
-        // const { skills } = await client.fetch('*[_type == "skills"][0] ');
         const { skills } = await client.fetch('*[_type == "skills"][0] {skills[]{color, icon, label, level}}');
-        console.log(skills)
         return skills;
     },
 
     // PROJECTS
     async getProjects() {
-        const projects = await client.fetch('*[_type == "project"] {mainImage, title, description, url} | order(_createdAt desc)');
+        const projects = await client.fetch('*[_type == "project"] {mainImage, title, description, body, "categories": categories[]->{title, icon, color}} | order(_createdAt desc)');
         return projects.map(project => {
             return {
-                src: [getImage(project.mainImage).width(320).height(180).url()],
+                src: [getImage(project.mainImage).width(600).height(300).url()],
                 ...project
             }
         })
