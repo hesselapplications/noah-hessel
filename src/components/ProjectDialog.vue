@@ -7,6 +7,9 @@
   >
     <v-card>
       <image-viewer :src="src"></image-viewer>
+
+      <v-divider></v-divider>
+
       <v-card-title class="text-h4">
         {{ title }}
       </v-card-title>
