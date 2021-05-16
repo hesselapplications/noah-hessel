@@ -4,6 +4,7 @@ import sanityImageUrlBuilder from '@sanity/image-url';
 const client = sanityClient({
     projectId: 'ksitws1i',
     dataset: 'production',
+    apiVersion: '2021-05-16',
     token: null, // leave blank to be anonymous user
     useCdn: process.env.NODE_ENV == 'production' // `false` if you want to ensure fresh data
 })
