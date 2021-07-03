@@ -16,6 +16,10 @@ function getImage(source) {
 }
 
 export default {
+    getImage(source) {
+        return getImage(source);
+    },
+
     async getMyPictureSrc() {
         const myPictures = await client.fetch(`*[_type == "aboutMe"].myPicture`);
         const myPicture = myPictures[0];

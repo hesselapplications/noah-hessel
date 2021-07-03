@@ -5,6 +5,7 @@
 <script>
 import BlockContent from 'sanity-blocks-vue-component'
 import Code from '@/components/Code'
+import ImageSerializer from '@/components/ImageSerializer'
 
 
 export default {
@@ -18,7 +19,8 @@ export default {
     return {
       serializers: {
         types: {
-          code: Code
+          code: Code,
+          img: ImageSerializer,
         }
       }
     }
