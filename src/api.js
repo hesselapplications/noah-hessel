@@ -50,7 +50,7 @@ export default {
 
     // PROJECTS
     async getProjects() {
-        const projects = await client.fetch('*[_type == "project"] {mainImage, title, description, body, "categories": categories[]->{title, icon, color}} | order(_createdAt desc)');
+        const projects = await client.fetch('*[_type == "project"] {mainImage, title, description, body, _createdAt, "categories": categories[]->{title, icon, color}} | order(_createdAt desc)');
         return projects.map(project => {
             return {
                 src: [getImage(project.mainImage).width(600).height(300).url()],
@@ -61,7 +61,7 @@ export default {
 
     // BLOG POSTS
     async getBlogPosts() {
-        const posts = await client.fetch('*[_type == "post"] {mainImage, title, description, slug} | order(_createdAt desc)');
+        const posts = await client.fetch('*[_type == "post"] {mainImage, title, description, slug, _createdAt} | order(_createdAt desc)');
         return posts.map(post => {
             return {
                 src: [getImage(post.mainImage).width(320).height(180).url()],
