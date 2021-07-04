@@ -3,17 +3,16 @@
 </template>
 
 <script>
-import BlockContent from 'sanity-blocks-vue-component'
-import Code from '@/components/Code'
-import ImageSerializer from '@/components/ImageSerializer'
-
+import BlockContent from "sanity-blocks-vue-component";
+import Code from "@/components/Code";
+import ImageSerializer from "@/components/ImageSerializer";
 
 export default {
   components: {
-    BlockContent
+    BlockContent,
   },
   props: {
-    blocks: Array
+    blocks: Array,
   },
   data() {
     return {
@@ -21,9 +20,19 @@ export default {
         types: {
           code: Code,
           img: ImageSerializer,
-        }
-      }
-    }
-  }
+        },
+      },
+    };
+  },
 };
 </script>
+<style>
+h1 {
+  padding-top: 1ch;
+  padding-bottom: 1ch;
+}
+
+p {
+  padding: 1ch 0ch;
+}
+</style>
