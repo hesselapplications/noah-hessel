@@ -16,7 +16,7 @@
     "clipboard": "^2.0.8",
     "core-js": "^3.12.1",
     "moment": "^2.29.1",
-    "prismjs": "^1.23.0",
+    "prismjs": "^1.25.0",
     "qs": "^6.10.1",
     "roboto-fontface": "*",
     "sanity-blocks-vue-component": "^0.1.0",
