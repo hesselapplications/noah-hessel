@@ -17,7 +17,7 @@
     "core-js": "^3.12.1",
     "moment": "^2.29.1",
     "prismjs": "^1.23.0",
-    "qs": "^6.10.1",
+    "qs": "^6.10.3",
     "roboto-fontface": "*",
     "sanity-blocks-vue-component": "^0.1.0",
     "vue": "^2.6.11",
