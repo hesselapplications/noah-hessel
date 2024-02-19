@@ -31,7 +31,7 @@ export default {
         const data = await client.getDocument("aboutMe");
         return {
             aboutMe: data.aboutMe,
-            src: getImage(data.myPicture).width(200).height(200).url(),
+            src: getImage(data.myPicture).width(1000).height(1000).url(),
             links: data.links
         }
     },
