@@ -3,7 +3,8 @@
     <v-layout
       v-if="aboutMe"
       align-center
-      justify-center
+      :justify-start="$vuetify.breakpoint.smAndDown"
+      :justify-center="$vuetify.breakpoint.mdAndUp"
       fill-height
       class="white"
     >
